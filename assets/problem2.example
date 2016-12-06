@@ -1,0 +1,15 @@
+try {
+  fs.readFile('/test1', 'utf-8', (err, data) => {
+    throw new Error('not exception safe');
+  });
+} catch (e) {
+  // the 'not exception safe' error never go here...
+  console.log('caughtException');
+  console.error(e);
+}
+
+process.on('uncaughtException', (err) => {
+  // the 'not exception safe' error go here...
+  console.log('uncaughtException');
+  console.error(err);
+});

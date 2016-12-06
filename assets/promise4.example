@@ -1,0 +1,27 @@
+// 4 times nested calls...
+fs.readFile('/test1', 'utf-8', (err1, data1) => {
+  if (err1) throw err1;
+  fs.readFile(data1, 'utf-8', (err2, data2) => {
+    if (err2) throw err2;
+    fs.readFile(data2, 'utf-8', (err3, data3) => {
+      if (err3) throw err3;
+      fs.readFile(data3, 'utf-8', (err4, data4) => {
+        if (err4) throw err4;
+        doSomething(data4);
+      });
+    });
+  });
+});
+// Promise version
+fs.readFile('/test1', 'utf-8')
+  .then(data1 =>
+    fs.readFile(data1, 'utf-8')
+  ).then(data2 =>
+    fs.readFile(data2, 'utf-8')
+  ).then(data3 =>
+    fs.readFile(data3, 'utf-8')
+  ).then(data4 => {
+    doSomething(data4);
+  }).catch(error => {
+    throw error; // centralized error handlers
+  });

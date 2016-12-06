@@ -1,0 +1,15 @@
+// parallel processing
+const completed = [];
+let error = null;
+fs.readFile('/test1', 'utf-8', (err, data) => {
+  if (err && !error) error = err;
+  else completed.push(data);
+});
+fs.readFile('/test2', 'utf-8', (err, data) => {
+  if (err && !error) error = err;
+  else completed.push(data);
+});
+
+while(completed.length === 2 || error) {
+  ....
+}

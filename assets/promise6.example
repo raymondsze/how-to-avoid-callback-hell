@@ -1,0 +1,17 @@
+try {
+  fs.readFile('/test1', 'utf-8', (err, data) => {
+    throw new Error('not exception safe');
+  });
+} catch (e) {
+  // the 'not exception safe' error never go here...
+  console.log('caughtException');
+  console.error(e);
+}
+
+// Promise version
+fs.readFile('/test1', 'utf-8').then(data => {
+  throw new Error('not exception safe');
+}).catch(e => {
+  console.log('caughtException');
+  console.error(e);
+});

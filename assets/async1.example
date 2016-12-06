@@ -1,0 +1,11 @@
+async.parallel([
+  function(callback) {
+    fs.readFile('/test1', 'utf-8', callback);
+  },
+  function(callback) {
+    fs.readFile('/test2', 'utf-8', callback);
+  },
+], function (err, results) {
+  if (err) handleError(err);
+  doSomething(results);
+});

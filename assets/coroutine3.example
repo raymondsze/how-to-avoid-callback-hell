@@ -1,0 +1,20 @@
+// No Nesting Calls
+coroutine(function *() {
+  // Parallel Async
+  const [data1, data2] = yield Promise.all([
+    fs.readFile('/test1'),
+    fs.readFile('/test2'),
+  ]);
+  let data3;
+  try {
+    data3 = yield fs.readFile(data1 + data2);
+  } catch (e) {
+    // Particular Error Handling
+    handleError(e);
+  }
+  const data4 = yield fs.readFile(data3);
+  doSomething(data4);
+}).catch(err => {
+  // Centralized Error Handling
+  handleError(err);
+});

@@ -1,0 +1,16 @@
+// Constant
+Promise.resolve(1);
+Promise.resolve('a');
+Promise.resolve(['a', 2]);
+Promise.resolve({ a: 20, b: 30 });
+// Thunk
+function sample(...args) {
+  return new Promise((resolve, reject) => {
+    thunk.apply(this, ...args, (err, ...args2) => {
+      if (err) reject(err);
+      else resolve(...args2);
+    });
+  });
+}
+// Generator
+co.wrap(generator);

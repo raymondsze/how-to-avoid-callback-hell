@@ -1,0 +1,25 @@
+// thunk version
+fs.readFile('/test1', 'utf-8', (err1, data1) => {
+  if (err1) handleError(err1);
+  fs.readFile(data1, 'utf-8', (err2, data2) => {
+    if (err2) handleError(err2);
+    fs.readFile(data2, 'utf-8', (err3, data3) => {
+      if (err3) handleError(err3);
+      fs.readFile(data3, 'utf-8', (err4, data4) => {
+        if (err4) handleError(err4);
+        doSomething(data4);
+      });
+    });
+  });
+});
+
+// coroutine version
+coroutine(function *() {
+  const data1 = yield fs.readFile('/test1');
+  const data2 = yield fs.readFile(data1);
+  const data3 = yield fs.readFile(data2);
+  const data4 = yield fs.readFile(data3);
+  doSomething(data4);
+}).catch(err => {
+  handleError(err);
+});

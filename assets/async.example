@@ -1,0 +1,17 @@
+async.waterfall([
+  function(callback) {
+    fs.readFile('/test1', 'utf-8', callback);
+  },
+  function(data1, callback) {
+    fs.readFile(data1, 'utf-8', callback);
+  },
+  function(data2, callback) {
+    fs.readFile(data2, 'utf-8', callback);
+  },
+  function(data3, callback) {
+    fs.readFile(data3, 'utf-8', callback);
+  }
+], function (err, data4) {
+  if (err) handleError(err);
+  doSomething(data4);
+});

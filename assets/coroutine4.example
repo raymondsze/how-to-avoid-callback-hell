@@ -1,0 +1,17 @@
+// bluebird
+import Bluebird from 'bluebird';
+const fsAsync = Bluebird.promisifyAll(fs);
+const func = Bluebird.coroutine(function *() {
+  const data1 = yield fsAsync.readFile('/test1');
+  const data2 = yield fsAsync.readFile(data1);
+  doSomething(data2);
+});
+func().then(...).catch(...);
+// co
+import co from 'co';
+const func = co.wrap(function *() {
+  const data1 = yield fs.readFile('/test1');
+  const data2 = yield fs.readFile(data1);
+  doSomething(data2);
+});
+func().then(...).catch(...);

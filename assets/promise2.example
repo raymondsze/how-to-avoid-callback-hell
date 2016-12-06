@@ -1,0 +1,22 @@
+// Promise.prototype.then, how to get the result
+sumAsync(1, 2).then(
+  data => {
+    // now data is 1 + 2 = 3
+    // ...
+  }
+);
+// Promise.prototype.catch, how to catch the error
+sumAsync(1, 'a').catch(
+  error => {
+    // now the error is about unable to parse 'a'
+    // ...
+  }
+);
+// promise is chain-able
+sumAsync(1, 2)
+  .then(data => {
+    // ...
+  })
+  .catch(error => {
+    // ...
+  });

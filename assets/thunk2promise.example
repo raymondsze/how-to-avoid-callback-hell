@@ -1,0 +1,15 @@
+fs.readFileAsync = function (...args) {
+  return new Promise((resolve, reject) => {
+    fs.readFile.apply(this, [...args, (error, data) => {
+      if (error) reject(error);
+      else resolve(data);
+    }]);
+  });
+};
+
+// The following have same effect to the above
+import Bluebird from 'bluebird';
+fs.readFileAsync = Bluebird.promisify(fs.readFile);
+
+// Or shorthand to convert all function to promise
+const fsAsync = Bluebird.promisifyAll(fs);

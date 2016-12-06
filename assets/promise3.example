@@ -1,0 +1,23 @@
+// promise is chain-able
+sumAsync(1, 2)
+  .then(data =>
+    // now data is 1 + 2 = 3
+    sumAsync(data, 3)
+  )
+  // you can add .catch here to catch the error from sumAsync(1, 2)
+  .then(data =>
+    // now data is 3 + 3 = 6
+    sumAsync(data, 5) // 6 + 5 = 11;
+  )
+  .catch(error => {
+    // here error is from previous then
+    // ...
+  });
+
+// promise is compose-able
+// here sumAsync(3,4) won't wait sumAsync(1,2) complete
+var p = Promise.all([sumAsync(1,2), sumAsync(3,4)]);
+p.then(data =>
+  // now data is [3, 7];
+  data[0] + data[1];
+);

@@ -1,0 +1,11 @@
+function coroutine(g) {
+  const gen = g();
+  const next = gen.next();
+  const nextStep = (p) => {
+    if (p.done) return p.value;
+    return p.value.then((v) => {
+      return nextStep(gen.next(v));
+    });
+  };
+  return nextStep(next);
+}

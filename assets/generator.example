@@ -1,0 +1,14 @@
+// function* mean it is a generator function
+function* gen() {
+  // yield is special syntax for generator function
+  yield 1;
+  var v = yield 2;
+  var f = yield 3 + v;
+  return f + 4;
+}
+
+var g = gen();
+g.next(); // { value: 1, done: false };
+g.next(); // { value: 2, done: false };
+g.next(4); // { value: 7, done: false };
+g.next(5); // { value: 9, done: true };
