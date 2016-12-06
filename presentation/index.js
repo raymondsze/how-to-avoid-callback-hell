@@ -40,7 +40,7 @@ export default class Presentation extends React.Component {
             <Heading size={1} fit caps>
               How to avoid callback hell?
             </Heading>
-            <Link href="https://github.com/FormidableLabs/spectacle">
+            <Link href="https://github.com/raymondsze/how-to-avoid-callback-hell">
               <Text bold caps textColor="black">View on Github</Text>
             </Link>
             <Text textSize="1em" margin="20px 0px 0px" bold textColor="white">Raymond Sze</Text>
