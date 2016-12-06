@@ -118,7 +118,7 @@ export default class Presentation extends React.Component {
           </Slide>
           <Slide transition={["slide"]} bgColor="orange" notes="You can even put notes on your slide. How awesome is that?">
             <Heading size={1} caps textColor="primary" textFont="primary">
-              No Cenetralized Error Handling
+              No Centralized Error Handling
             </Heading>
             <Appear>
               <CodePane
