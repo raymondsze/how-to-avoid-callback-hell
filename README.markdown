@@ -1,6 +1,7 @@
 ## How to avoid callback hell
 This is the presentation slides built with https://github.com/FormidableLabs/spectacle
 The presentation slides are related to the topic 'How to avoid Callback Hell in NodeJS'.
+Download link: https://github.com/raymondsze/how-to-avoid-callback-hell/blob/master/how_to_avoid_callback_hell.pdf
 
 ## Highlight
 1. Dig into the codes explanation
