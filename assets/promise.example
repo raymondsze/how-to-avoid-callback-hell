@@ -1,6 +1,6 @@
 // Thunk version
 function sumThunk(number1, number2, callback) {
-  process.setImmediate(() => {
+  setImmediate(() => {
     try {
       const sum = parseInt(number1) + parseInt(number2);
       callback(null, sum);
