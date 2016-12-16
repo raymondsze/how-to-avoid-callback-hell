@@ -430,6 +430,19 @@ export default class Presentation extends React.Component {
               margin="0px auto"
             />
           </Slide>
+          <Slide transition={["slide"]} bgColor="orange">
+            <Heading caps size={1} textColor="primary" textFont="primary">
+              Recommendation
+            </Heading>
+            <List>
+              <Appear><ListItem>Write your function returning Promise, no more thunk</ListItem></Appear>
+              <Appear><ListItem>Use async and await syntax as first preference</ListItem></Appear>
+              <Appear><ListItem>Use Bluebird.coroutine as second preference</ListItem></Appear>
+              <Appear><ListItem>Use Promise.all to handle parallel tasks</ListItem></Appear>
+              <Appear><ListItem>Use Bluebird.promisify or Bluebird.promisifyAll to convert thunk to promise</ListItem></Appear>
+              <Appear><ListItem>Review your application if Exception Safe is handled correctly</ListItem></Appear>
+            </List>
+          </Slide>
         </Deck>
       </Spectacle>
     );
