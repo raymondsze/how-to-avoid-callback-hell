@@ -47,31 +47,31 @@ export default class Presentation extends React.Component {
           </Slide>
           <Slide transition={["slide"]} bgColor="orange" notes="You can even put notes on your slide. How awesome is that?">
             <Heading size={1} caps textColor="primary" textFont="primary">
-              What is thunk?
+              What is callback style function?
             </Heading>
             <CodePane
               lang="js"
-              source={require("raw!../assets/thunk.example")}
+              source={require("raw!../assets/callback.example")}
               margin="0px auto"
             />
             <List>
-              <Appear><ListItem>Thunk can accepts any number of arguments</ListItem></Appear>
+              <Appear><ListItem>Callback style function can accepts any number of arguments</ListItem></Appear>
               <Appear><ListItem>The last argument must be callback function</ListItem></Appear>
-              <Appear><ListItem>Callback function accepts 2 arguments (error, result)</ListItem></Appear>
+              <Appear><ListItem>callback receives (error, ...result)</ListItem></Appear>
             </List>
           </Slide>
           <Slide transition={["slide"]} bgColor="orange" notes="You can even put notes on your slide. How awesome is that?">
             <Heading size={1} caps textColor="primary" textFont="primary">
-              Thunk Example
+              Callback Examples
             </Heading>
             <CodePane
               lang="js"
-              source={require("raw!../assets/thunk2.example")}
+              source={require("raw!../assets/callback2.example")}
               margin="0px auto"
             />
             <List>
-              <Appear><ListItem>NodeJs api design are using thunk</ListItem></Appear>
-              <Appear><ListItem>Lots of library are using thunk (e.g mongoose)</ListItem></Appear>
+              <Appear><ListItem>NodeJs api design are using callback</ListItem></Appear>
+              <Appear><ListItem>Lots of library are using callback (e.g mongoose)</ListItem></Appear>
               <Appear><ListItem>But... Thunk makes Callback Hell!</ListItem></Appear>
             </List>
           </Slide>
@@ -253,15 +253,15 @@ export default class Presentation extends React.Component {
           </Slide>
           <Slide transition={["slide"]} bgColor="orange">
             <Heading caps size={1} textColor="primary" textFont="primary">
-              Thunk to Promise
+              Callback function to Promise function
             </Heading>
             <CodePane
               lang="js"
-              source={require("raw!../assets/thunk2promise.example")}
+              source={require("raw!../assets/callback2promise.example")}
               margin="0px auto"
             />
             <List>
-              <Appear><ListItem>Thunk to Promise is easy</ListItem></Appear>
+              <Appear><ListItem>Callback function to Promise function is easy</ListItem></Appear>
               <Appear><ListItem>You don't need write yourself</ListItem></Appear>
               <Appear><ListItem>Checkout Bluebird.promisfy and Bluebird.promisifyAll</ListItem></Appear>
             </List>
@@ -274,7 +274,7 @@ export default class Presentation extends React.Component {
               <Appear><ListItem>Exception Safe</ListItem></Appear>
               <Appear><ListItem>Easy to Parallel Async</ListItem></Appear>
               <Appear><ListItem>Still not Good to Read, then vs Array</ListItem></Appear>
-              <Appear><ListItem>Need convert Thunk to Promise</ListItem></Appear>
+              <Appear><ListItem>Need convert Callbcak function to Promise function</ListItem></Appear>
               <Appear><ListItem>2 way to throw Exception (By throw or reject)</ListItem></Appear>
             </List>
           </Slide>
@@ -352,7 +352,7 @@ export default class Presentation extends React.Component {
             />
             <List>
               <Appear><ListItem>Need write coroutine function</ListItem></Appear>
-              <Appear><ListItem>Still need convert Thunk to Promise</ListItem></Appear>
+              <Appear><ListItem>Still need convert callback function to Promise</ListItem></Appear>
             </List>
           </Slide>
           <Slide transition={["slide"]} bgColor="orange">
@@ -387,7 +387,6 @@ export default class Presentation extends React.Component {
               <Appear><ListItem>Exception Safe</ListItem></Appear>
               <Appear><ListItem>Easy to Parallel Async by Promise.all</ListItem></Appear>
               <Appear><ListItem>Make use of Generator syntax, Easy to Read</ListItem></Appear>
-              <Appear><ListItem>With co.js, no need convert Thunk to Promise</ListItem></Appear>
             </List>
           </Slide>
           <Slide transition={["slide"]} bgColor="orange">
@@ -412,7 +411,7 @@ export default class Presentation extends React.Component {
               <Appear><ListItem>Exception Safe</ListItem></Appear>
               <Appear><ListItem>Easy to Parallel Async by Promise.all</ListItem></Appear>
               <Appear><ListItem>async, await is ES2015 standard (Node7 support)</ListItem></Appear>
-              <Appear><ListItem>Need convert Thunk to Promise (Bluebird could help you)</ListItem></Appear>
+              <Appear><ListItem>Need convert callbcak function to Promise (Bluebird could help you)</ListItem></Appear>
             </List>
           </Slide>
           <Slide transition={["slide"]} bgColor="black">
@@ -435,11 +434,11 @@ export default class Presentation extends React.Component {
               Recommendation
             </Heading>
             <List>
-              <Appear><ListItem>Write your function returning Promise, no more thunk</ListItem></Appear>
+              <Appear><ListItem>Write your function returning Promise, no more callback function</ListItem></Appear>
               <Appear><ListItem>Use async and await syntax as first preference</ListItem></Appear>
               <Appear><ListItem>Use Bluebird.coroutine as second preference</ListItem></Appear>
               <Appear><ListItem>Use Promise.all to handle parallel tasks</ListItem></Appear>
-              <Appear><ListItem>Use Bluebird.promisify or Bluebird.promisifyAll to convert thunk to promise</ListItem></Appear>
+              <Appear><ListItem>Use Bluebird.promisify or Bluebird.promisifyAll to convert callback function to promise</ListItem></Appear>
               <Appear><ListItem>Review your application if Exception Safe is handled correctly</ListItem></Appear>
             </List>
           </Slide>

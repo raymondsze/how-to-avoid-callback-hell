@@ -3,13 +3,13 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 const Person = mongoose.model('Person', new Schema({ username: String }));
 
-// fs.readFile is Thunk function
+// fs.readFile is callbcak style function
 fs.readFile('/testFile', 'utf8', (err, data) => {
   if (err) throw err;
   console.log(data);
 });
 
-// Person.findOne is Thunk function
+// Person.findOne is callbcak style function
 Person.findOne({ 'username': 'Ghost' }, (err, person) => {
   if (err) throw err;
   console.log(`username is ${person.username}`);
