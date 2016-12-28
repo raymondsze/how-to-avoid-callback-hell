@@ -72,7 +72,7 @@ export default class Presentation extends React.Component {
             <List>
               <Appear><ListItem>NodeJs api design are using callback</ListItem></Appear>
               <Appear><ListItem>Lots of library are using callback (e.g mongoose)</ListItem></Appear>
-              <Appear><ListItem>But... Thunk makes Callback Hell!</ListItem></Appear>
+              <Appear><ListItem>But... Callback Hell!</ListItem></Appear>
             </List>
           </Slide>
           <Slide transition={["slide"]} bgColor="black">
